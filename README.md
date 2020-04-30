@@ -7,4 +7,7 @@ Command: dec: Syntax `dec: {new var name} = {number or var} - {number or var};` 
 Command: inp: Syntax: `inp: {new var name};` input  
 Command: for: Syntax: `for: {how often the commands should be executed}, {amount of commands that should be executed}` for loop  
 How to write comments: `#Comment;`  
-  
+
+## How to use
+`>>python3 main.py {script path}`    
+Works for Windows and Linux    
