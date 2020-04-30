@@ -53,7 +53,7 @@ try:
         elif script[i].replace("  ", "").startswith("inp:"):
             variables[script_tmp[i][5:]] = input()
 
-        #for: 50 iterations , 2 commands to execute
+        #for: iterations , commands to execute
         #for loop
         elif script[i].replace("  ", "").startswith("for:"):
             try:
@@ -73,7 +73,7 @@ try:
                 print("SyntaxError at line: " + str(i) + " '" + script_tmp[i] + ";'")
 
         # This doesnt work
-        #while: 2 commands to execute
+        #while: commands to execute
         #while loop
 #        elif script[i].replace("  ", "").startswith("while:"):
 #            try:
