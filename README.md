@@ -1,4 +1,5 @@
 # Minibyte-Script
+# WARNING: This is just the Alpha version!
 ## Commands:  
 Command: print: Syntax: `print: {text or var that u want to print};`  
 Command: define: Syntax: `define: {var name} = {Text, value or bool (array commes soon)};` create var  
