@@ -9,5 +9,5 @@ Command: for: Syntax: `for: {how often the commands should be executed}, {amount
 How to write comments: `#Comment;`  
 
 ## How to use
-`>>python3 main.py {script path}`    
+`python3 main.py {script path}`    
 Works for Windows and Linux    
