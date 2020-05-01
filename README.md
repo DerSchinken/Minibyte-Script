@@ -1,5 +1,5 @@
 # Minibyte-Script
-# WARNING: This is just the Alpha version!
+# WARNING: This is just the Alpha version! (and a shity language)
 The Calculation system needs a rework and for, while (everything except print)      
 ## Commands:  
 Command: print: Syntax: `print: {text or var that u want to print};`  
