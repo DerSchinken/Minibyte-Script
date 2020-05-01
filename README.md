@@ -12,3 +12,4 @@ How to write comments: `#Comment;`
 ## How to use
 `python3 main.py {script path}`    
 Works for Windows and Linux    
+File extension (.cs, .py, .c, etc.) does not matter at the moment but it will probably be .MES      
