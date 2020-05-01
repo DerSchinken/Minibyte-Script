@@ -13,8 +13,6 @@ try:
         global variables
         global s
 
-        break_while = False
-
         #print
         if script_tmp[i].replace(" ", "").startswith('print:"'):
             print(script_tmp[i][8:].replace('"', ""))
@@ -59,12 +57,10 @@ try:
             try:
                 for o in range(int(script[i].split(",")[0][5:])-1):
                     for p in range(int(script[i].split(",")[1])):
-                        commands(script_tmp, p+i+1)
-                        if break_while:
-                            #break_while = False
+                        ret = commands(script_tmp, p+i+1)
+                        if ret == "EXIT LOOP":
                             break
-                    if break_while:
-                        break_while = False
+                    if ret == "EXIT LOOP":
                         break
                 for o in range(int(script[i].split(",")[1])-1):
                     next(s)
@@ -74,29 +70,26 @@ try:
         # This doesnt work
         #while: commands to execute
         #while loop
-#        elif script[i].replace("  ", "").startswith("while:"):
-#            try:
-#                old_i = i
-#                while True:
-#                    i = old_i
-#                    for l in range(int(script[i][6:])):
-#                        commands(script_tmp, i+l+1)
-#                        if break_while:
-#                            #break_while = False
-#                            break
-#                    if break_while:
-#                        break_while = False
-#                        break
-#                for k in range(int(script[i][6:])):
-#                    next(s)
-#            except SyntaxError:
-#                print("SyntaxError at line: " + str(i) + " '" + script_tmp[i] + ";'")
+        elif script[i].replace("  ", "").startswith("while:"):
+            try:
+                while True:
+                    for l in range(int(script[i][6:])):
+                        ret = commands(script_tmp, i+l+1)
+                        if ret == "EXIT LOOP":
+                            break
+                    if ret == "EXIT LOOP":
+                        break
+                        
+                for k in range(int(script[i][6:])):
+                    next(s)
+            except SyntaxError:
+                print("SyntaxError at line: " + str(i) + " '" + script_tmp[i] + ";'")
 
         #this should work but if it does idk i will try that later
         #break
-        elif script[i].replace("  ", "").startswith("break"):
+        elif script[i].startswith("break"):
             try:
-                break_while = True
+                return "EXIT LOOP"
             except SyntaxError:
                 print("SyntaxError at line: " + str(i) + " '" + script_tmp[i] + ";'")
 
