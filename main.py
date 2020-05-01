@@ -53,7 +53,7 @@ try:
         elif script[i].replace("  ", "").startswith("inp:"):
             variables[script_tmp[i][5:]] = input()
 
-        #for: 50 iterations , 2 commands to execute
+        #for: iterations , commands to execute
         #for loop
         elif script[i].replace("  ", "").startswith("for:"):
             try:
@@ -68,7 +68,6 @@ try:
                         break
                 for o in range(int(script[i].split(",")[1])-1):
                     next(s)
-                    #pass
             except SyntaxError:
                 print("SyntaxError at line: " + str(i) + " '" + script_tmp[i] + ";'")
 
@@ -124,5 +123,3 @@ except KeyboardInterrupt:
     print("KeyboardInterrupt at line: " + str(i) + " '" + script[i] + ";'")
 except IndexError:
     print("")
-
-
