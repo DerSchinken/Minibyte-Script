@@ -21,11 +21,13 @@ try:
                 print(variables[script_tmp[i].replace(" ", "").replace('"', "")[6:]])
             except KeyError:
                 print("NameError at line " + str(i) + " '" + script_tmp[i] + ";'")
+                exit()
         elif script_tmp[i].startswith('  print:'):
             try:
                 print(variables[script_tmp[i].replace(" ", "").replace('"', "")[8:]])
             except KeyError:
                 print("NameError at line " + str(i) + " '" + script_tmp[i] + ";'")
+                exit()
             
 
         #define
@@ -66,6 +68,7 @@ try:
                     next(s)
             except SyntaxError:
                 print("SyntaxError at line: " + str(i) + " '" + script_tmp[i] + ";'")
+                exit()
 
         #while: amount of commands to execute
         #while loop
@@ -83,14 +86,16 @@ try:
                     next(s)
             except SyntaxError:
                 print("SyntaxError at line: " + str(i) + " '" + script_tmp[i] + ";'")
+                exit()
 
-        #this should work but if it does idk i will try that later
+        #this works in while but not in for
         #break
         elif script[i].startswith("break"):
             try:
                 return "EXIT LOOP"
             except SyntaxError:
                 print("SyntaxError at line: " + str(i) + " '" + script_tmp[i] + ";'")
+                exit()
 
         #comments
         elif script_tmp[i].replace("  ", "").startswith("#"):
@@ -113,5 +118,7 @@ try:
 
 except KeyboardInterrupt:
     print("KeyboardInterrupt at line: " + str(i) + " '" + script[i] + ";'")
+    exit()
 except IndexError:
-    print("")
+    print("MEScript Command usage:\nMEScript [file path]")
+    exit()
