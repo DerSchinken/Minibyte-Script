@@ -67,8 +67,7 @@ try:
             except SyntaxError:
                 print("SyntaxError at line: " + str(i) + " '" + script_tmp[i] + ";'")
 
-        # This doesnt work
-        #while: commands to execute
+        #while: amount of commands to execute
         #while loop
         elif script[i].replace("  ", "").startswith("while:"):
             try:
