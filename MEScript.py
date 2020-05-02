@@ -85,11 +85,16 @@ def prog_lang():
                     print("SyntaxError at line: " + str(i) + " '" + script_tmp[i] + ";'")
                     exit()
 
-            # Commes soon
+            # if: 1 == 1:
             # IF
-#            elif "==" in script[i]:
-#                if int():
-#                    pass
+            elif "==" in script[i]:
+                if int(script_tmp[i].replace(" ", "").replace("if:", "").split("==")[0] == script_tmp[i].replace(" ", "").replace("if:", "").split("==")[1].split(",")[0]):
+                    for k in range(int(script_tmp[i].replace(" ", "").replace("if:", "").split("==")[1].split(",")[1])):
+                        commands(script, i+k+1)
+                        next(s)
+                else:
+                    for k in range(int(script_tmp[i].replace(" ", "").replace("if:", "").split("==")[1].split(",")[1])):
+                        next(s)
 
             #comments
             elif script_tmp[i].replace("  ", "").startswith("#"):
