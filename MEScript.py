@@ -1,5 +1,5 @@
 import sys
-from itertools import islice
+
 
 def prog_lang():
     global variables
@@ -158,6 +158,7 @@ def prog_lang():
 #    except IndexError:
 #        print("MEScript Command usage:     MEScript [file path]")
 #        exit()
+
 
 if __name__ == "__main__":
     prog_lang()
